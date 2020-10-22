@@ -1,4 +1,6 @@
-﻿namespace tabuleiro
+﻿using System.ComponentModel;
+
+namespace tabuleiro
 {
     abstract class Peca
     {
@@ -23,6 +25,28 @@
         {
             qteMovimentos++;
         }
+
+        public bool existemMovimentosPossiveis()
+        {
+            bool[,] mat = movimentosPossiveis();
+            for (int i = 0; i < tab.linhas; i++)
+            {
+                for (int j = 0; j < tab.colunas; j++)
+                {
+                    if (mat[i, j] == true) // or simpoly "if (mat[i,j])"
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool podeMoverPara(Posicao pos)
+        {
+            return movimentosPossiveis()[pos.linha, pos.coluna];
+        }
         public abstract bool[,] movimentosPossiveis();
+
     }
 }
