@@ -25,7 +25,10 @@ namespace tabuleiro
         {
             qteMovimentos++;
         }
-
+        public void decrementarQteMovimentos()
+        {
+            qteMovimentos--;
+        }
         public bool existemMovimentosPossiveis()
         {
             bool[,] mat = movimentosPossiveis();
@@ -33,7 +36,7 @@ namespace tabuleiro
             {
                 for (int j = 0; j < tab.colunas; j++)
                 {
-                    if (mat[i, j] == true) // or simpoly "if (mat[i,j])"
+                    if (mat[i, j]) // or simply "if (mat[i, j] == true)"
                     {
                         return true;
                     }
