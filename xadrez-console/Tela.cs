@@ -10,6 +10,7 @@ namespace xadrez_console
     {
         public static void imprimirTabuleiro(Tabuleiro tab)
         {
+            Console.WriteLine("  a b c d e f g h");
             for (int i = 0; i < tab.linhas; i++)
             {
                 Console.Write(8 - i + " ");
@@ -17,6 +18,7 @@ namespace xadrez_console
                 {
                     imprimirPeca(tab.peca(i, j));
                 }
+                Console.Write(" " + (8 - i));
                 Console.WriteLine();
             }
             Console.WriteLine("  a b c d e f g h");
