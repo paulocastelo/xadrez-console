@@ -72,7 +72,8 @@ namespace xadrez_console
         {
             ConsoleColor fundoOriginal = Console.BackgroundColor;
             ConsoleColor fundoAlterado = ConsoleColor.DarkGreen;
-
+            
+            Console.WriteLine("  a b c d e f g h");
             for (int i = 0; i < tab.linhas; i++)
             {
                 Console.Write(8 - i + " ");
@@ -89,6 +90,7 @@ namespace xadrez_console
                     imprimirPeca(tab.peca(i, j));
                     Console.BackgroundColor = fundoOriginal;
                 }
+                Console.Write(" " + (8 - i));
                 Console.WriteLine();
             }
             Console.WriteLine("  a b c d e f g h");
